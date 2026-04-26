@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATLAS와 함께하는 평가원 1회독</title>
+    <style>
+        :root { --primary-color: #2563eb; --bg-color: #f8fafc; }
+        body { font-family: 'Pretendard', -apple-system, sans-serif; line-height: 1.6; color: #1e293b; max-width: 900px; margin: 0 auto; padding: 40px 20px; background-color: var(--bg-color); }
+        .container { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+        h1 { text-align: center; color: #1e293b; font-size: 2rem; margin-bottom: 10px; }
+        .subtitle { text-align: center; color: #64748b; margin-bottom: 40px; }
+        h2 { color: var(--primary-color); border-left: 4px solid var(--primary-color); padding-left: 12px; margin-top: 40px; font-size: 1.4rem; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; background: white; }
+        th, td { border: 1px solid #e2e8f0; padding: 14px; text-align: left; }
+        th { background-color: #f1f5f9; font-weight: 600; }
+        tr:hover { background-color: #f8fafc; }
+        input[type="checkbox"] { width: 18px; height: 18px; cursor: pointer; }
+        .highlight { color: #ef4444; font-weight: bold; }
+        .footer { margin-top: 50px; padding: 20px; background: #f1f5f9; border-radius: 12px; font-size: 0.9rem; }
+        @media print { .no-print { display: none; } body { padding: 0; } .container { box-shadow: none; } }
+        .print-btn { background: var(--primary-color); color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; float: right; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="print-btn no-print" onclick="window.print()">PDF로 저장/출력하기</button>
+        <h1>ATLAS와 함께하는 평가원 1회독</h1>
+        <p class="subtitle">6월 모의고사 전범위 완독 스케줄 (주 4일 집중 플랜)</p>
+
+        <h2>Phase 1: 최신 평가원 기출 21회차 (2021~2026)</h2>
+        <table>
+            <thead>
+                <tr><th>주차</th><th>회차</th><th>학습 내용</th><th style="width:60px">완료</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>1주차</td><td>Day 1-4</td><td>2021 6/9/수능, 2022 6평</td><td><input type="checkbox"></td></tr>
+                <tr><td>2주차</td><td>Day 5-8</td><td>2022 9/수능, 2023 6/9평</td><td><input type="checkbox"></td></tr>
+                <tr><td>3주차</td><td>Day 9-12</td><td>2023 수능, 2024 6/9/수능</td><td><input type="checkbox"></td></tr>
+                <tr><td>4주차</td><td>Day 13-16</td><td>2025 6/9/수능, 2026 예비기출</td><td><input type="checkbox"></td></tr>
+            </tbody>
+        </table>
+
+        <h2>Phase 2: 과거 기출(2014-2020) 선별 및 약점 보완</h2>
+        <table>
+            <thead>
+                <tr><th>구분</th><th>학습 내용</th><th style="width:60px">완료</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Day 17-20</td><td>2014-2020 교육과정 내 주요 문항 선별 풀이</td><td><input type="checkbox"></td></tr>
+                <tr><td>Day 21-24</td><td><span class="highlight">약점 테마:</span> 킬러 로직 및 실전 행동 강령 정리</td><td><input type="checkbox"></td></tr>
+                <tr><td>D-Day</td><td>전 범위 최종 복기 및 마인드 컨트롤</td><td><input type="checkbox"></td></tr>
+            </tbody>
+        </table>
+
+        <div class="footer">
+            <strong>💡 ATLAS 학습 가이드:</strong><br>
+            - 모든 회차는 실전처럼 30분 타이머를 맞추고 풀이하세요.<br>
+            - 채점 직후 '내가 왜 이 생각을 못 했는지' 행동 강령을 적는 것이 핵심입니다.
+        </div>
+    </div>
+</body>
+</html>
