@@ -5,38 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ATLAS 6평 대비 평가원 1회독</title>
     <style>
-        :root { --primary: #2563eb; --secondary: #3b82f6; --accent: #ef4444; --bg: #f1f5f9; }
+        :root { --primary: #2563eb; --accent: #ef4444; --bg: #f1f5f9; }
         body { font-family: 'Pretendard', sans-serif; background-color: var(--bg); color: #334155; line-height: 1.5; margin: 0; padding: 20px; }
         .wrapper { max-width: 850px; margin: 0 auto; background: white; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); padding: 40px; }
         header { text-align: center; border-bottom: 2px solid #e2e8f0; padding-bottom: 30px; margin-bottom: 30px; }
         h1 { font-size: 2.2rem; color: #1e293b; margin: 0; letter-spacing: -1px; }
         .brand { color: var(--primary); font-weight: 800; }
-        
         .guideline { background: #f8fafc; border-radius: 12px; padding: 20px; margin-bottom: 30px; border-left: 5px solid var(--primary); }
         .guideline h3 { margin-top: 0; color: var(--primary); font-size: 1.1rem; }
         .guideline ul { margin: 0; padding-left: 20px; font-size: 0.95rem; }
-        
         .week-section { margin-bottom: 40px; }
-        .week-title { font-size: 1.3rem; font-weight: 700; color: #1e293b; margin-bottom: 15px; display: flex; align-items: center; }
+        .week-title { font-size: 1.3rem; font-weight: 700; color: #1e293b; margin-bottom: 15px; }
         .week-title span { font-size: 0.9rem; color: #64748b; margin-left: 10px; font-weight: 400; }
-
         table { width: 100%; border-collapse: collapse; margin-bottom: 10px; }
-        th { background: #f1f5f9; text-align: left; padding: 12px; font-size: 0.85rem; text-transform: uppercase; color: #64748b; }
+        th { background: #f1f5f9; text-align: left; padding: 12px; font-size: 0.85rem; color: #64748b; }
         td { padding: 15px 12px; border-bottom: 1px solid #f1f5f9; }
         .day-cell { width: 15%; font-weight: 600; color: var(--primary); }
         .date-cell { width: 20%; color: #94a3b8; font-size: 0.85rem; }
         .content-cell { width: 55%; font-weight: 500; }
         .check-cell { width: 10%; text-align: center; }
-
         input[type="checkbox"] { width: 22px; height: 22px; cursor: pointer; accent-color: var(--primary); }
         .phase-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; margin-bottom: 5px; }
         .p1 { background: #dbeafe; color: #1e40af; }
         .p2 { background: #fef2f2; color: #991b1b; }
-
         .print-btn { position: fixed; bottom: 30px; right: 30px; background: var(--primary); color: white; border: none; padding: 15px 25px; border-radius: 50px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(37,99,235,0.3); z-index: 100; }
-        @media print { .print-btn { display: none; } .wrapper { box-shadow: none; padding: 0; } }
-        
         .reset-btn { font-size: 0.8rem; color: #94a3b8; background: none; border: none; text-decoration: underline; cursor: pointer; float: right; margin-top: 10px; }
+        @media print { .print-btn, .reset-btn { display: none; } .wrapper { box-shadow: none; padding: 0; } }
     </style>
 </head>
 <body>
@@ -53,6 +47,10 @@
             <li><strong>시간 엄수:</strong> 실제 시험처럼 <strong>30분</strong> 타이머를 맞추고 풀이할 것.</li>
             <li><strong>피드백:</strong> 채점 및 오답 분석 후, 해결되지 않는 지점은 반드시 <strong>멘토에게 질문</strong>하기!</li>
         </ul>
+        <h3 style="margin-top:15px; color: var(--accent);">🎯 Phase 2 행동강령 (약점 타격)</h3>
+        <ul>
+            <li><strong>테마 학습:</strong> 취약한 단원의 개념/로직을 복습하고 관련 기출 문항을 집중 풀이하세요.</li>
+        </ul>
     </div>
 
     <div class="week-section">
@@ -60,10 +58,67 @@
         <table>
             <thead><tr><th>Day</th><th>Date</th><th>Target Content</th><th>Check</th></tr></thead>
             <tbody>
-                <tr><td class="day-cell">Day 01</td><td class="date-cell">04/27</td><td class="content-cell">21학년도 6월 모의평가</td><td class="check-cell"><input type="checkbox" class="save-state" id="day01"></td></tr>
-                <tr><td class="day-cell">Day 02</td><td class="date-cell">04/28</td><td class="content-cell">21학년도 9월 모의평가</td><td class="check-cell"><input type="checkbox" class="save-state" id="day02"></td></tr>
-                <tr><td class="day-cell">Day 03</td><td class="date-cell">04/30</td><td class="content-cell">21학년도 수능</td><td class="check-cell"><input type="checkbox" class="save-state" id="day03"></td></tr>
-                <tr><td class="day-cell">Day 04</td><td class="date-cell">05/01</td><td class="content-cell">22학년도 6월 모의평가</td><td class="check-cell"><input type="checkbox" class="save-state" id="day04"></td></tr>
+                <tr><td class="day-cell">Day 01</td><td class="date-cell">04/27 (Mon)</td><td class="content-cell"><span class="phase-badge p1">P1</span> 21학년도 6월 모평</td><td class="check-cell"><input type="checkbox" class="save-state" id="day01"></td></tr>
+                <tr><td class="day-cell">Day 02</td><td class="date-cell">04/28 (Tue)</td><td class="content-cell"><span class="phase-badge p1">P1</span> 21학년도 9월 모평</td><td class="check-cell"><input type="checkbox" class="save-state" id="day02"></td></tr>
+                <tr><td class="day-cell">Day 03</td><td class="date-cell">04/30 (Thu)</td><td class="content-cell"><span class="phase-badge p1">P1</span> 21학년도 수능</td><td class="check-cell"><input type="checkbox" class="save-state" id="day03"></td></tr>
+                <tr><td class="day-cell">Day 04</td><td class="date-cell">05/01 (Fri)</td><td class="content-cell"><span class="phase-badge p1">P1</span> 22학년도 6월 모평</td><td class="check-cell"><input type="checkbox" class="save-state" id="day04"></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="week-section">
+        <div class="week-title">2주차 <span>5월 4일 ~ 5월 10일</span></div>
+        <table>
+            <tbody>
+                <tr><td class="day-cell">Day 05</td><td class="date-cell">05/04 (Mon)</td><td class="content-cell"><span class="phase-badge p1">P1</span> 22학년도 9월 모평</td><td class="check-cell"><input type="checkbox" class="save-state" id="day05"></td></tr>
+                <tr><td class="day-cell">Day 06</td><td class="date-cell">05/05 (Tue)</td><td class="content-cell"><span class="phase-badge p1">P1</span> 22학년도 수능</td><td class="check-cell"><input type="checkbox" class="save-state" id="day06"></td></tr>
+                <tr><td class="day-cell">Day 07</td><td class="date-cell">05/07 (Thu)</td><td class="content-cell"><span class="phase-badge p1">P1</span> 23학년도 6월 모평</td><td class="check-cell"><input type="checkbox" class="save-state" id="day07"></td></tr>
+                <tr><td class="day-cell">Day 08</td><td class="date-cell">05/08 (Fri)</td><td class="content-cell"><span class="phase-badge p1">P1</span> 23학년도 9월 모평</td><td class="check-cell"><input type="checkbox" class="save-state" id="day08"></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="week-section">
+        <div class="week-title">3주차 <span>5월 11일 ~ 5월 17일</span></div>
+        <table>
+            <tbody>
+                <tr><td class="day-cell">Day 09</td><td class="date-cell">05/11 (Mon)</td><td class="content-cell"><span class="phase-badge p1">P1</span> 23학년도 수능</td><td class="check-cell"><input type="checkbox" class="save-state" id="day09"></td></tr>
+                <tr><td class="day-cell">Day 10</td><td class="date-cell">05/12 (Tue)</td><td class="content-cell"><span class="phase-badge p1">P1</span> 24학년도 6월 모평</td><td class="check-cell"><input type="checkbox" class="save-state" id="day10"></td></tr>
+                <tr><td class="day-cell">Day 11</td><td class="date-cell">05/14 (Thu)</td><td class="content-cell"><span class="phase-badge p1">P1</span> 24학년도 9월 모평</td><td class="check-cell"><input type="checkbox" class="save-state" id="day11"></td></tr>
+                <tr><td class="day-cell">Day 12</td><td class="date-cell">05/15 (Fri)</td><td class="content-cell"><span class="phase-badge p1">P1</span> 24학년도 수능</td><td class="check-cell"><input type="checkbox" class="save-state" id="day12"></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="week-section">
+        <div class="week-title">4주차 <span>5월 18일 ~ 5월 24일</span></div>
+        <table>
+            <tbody>
+                <tr><td class="day-cell">Day 13</td><td class="date-cell">05/18 (Mon)</td><td class="content-cell"><span class="phase-badge p1">P1</span> 25학년도 6월 모평</td><td class="check-cell"><input type="checkbox" class="save-state" id="day13"></td></tr>
+                <tr><td class="day-cell">Day 14</td><td class="date-cell">05/19 (Tue)</td><td class="content-cell"><span class="phase-badge p1">P1</span> 25학년도 9월 모평</td><td class="check-cell"><input type="checkbox" class="save-state" id="day14"></td></tr>
+                <tr><td class="day-cell">Day 15</td><td class="date-cell">05/21 (Thu)</td><td class="content-cell"><span class="phase-badge p1">P1</span> 25학년도 수능</td><td class="check-cell"><input type="checkbox" class="save-state" id="day15"></td></tr>
+                <tr><td class="day-cell">Day 16</td><td class="date-cell">05/22 (Fri)</td><td class="content-cell"><span class="phase-badge p1">P1</span> 26학년도 예비 기출 (A)</td><td class="check-cell"><input type="checkbox" class="save-state" id="day16"></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="week-section">
+        <div class="week-title">5주차 <span>5월 25일 ~ 5월 31일</span></div>
+        <table>
+            <tbody>
+                <tr><td class="day-cell">Day 17</td><td class="date-cell">05/25 (Mon)</td><td class="content-cell"><span class="phase-badge p1">P1</span> 26학년도 예비 기출 (B)</td><td class="check-cell"><input type="checkbox" class="save-state" id="day17"></td></tr>
+                <tr><td class="day-cell">Day 18</td><td class="date-cell">05/26 (Tue)</td><td class="content-cell"><span class="phase-badge p2">P2</span> 과거 기출 선별 문항 풀이</td><td class="check-cell"><input type="checkbox" class="save-state" id="day18"></td></tr>
+                <tr><td class="day-cell">Day 19</td><td class="date-cell">05/28 (Thu)</td><td class="content-cell"><span class="phase-badge p2">P2</span> 약점 테마 집중 학습 01</td><td class="check-cell"><input type="checkbox" class="save-state" id="day19"></td></tr>
+                <tr><td class="day-cell">Day 20</td><td class="date-cell">05/29 (Fri)</td><td class="content-cell"><span class="phase-badge p2">P2</span> 약점 테마 집중 학습 02</td><td class="check-cell"><input type="checkbox" class="save-state" id="day20"></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="week-section">
+        <div class="week-title" style="color: var(--accent);">Final Day <span>6월 1일</span></div>
+        <table>
+            <tbody>
+                <tr style="background: #fff1f2;"><td class="day-cell">D-1</td><td class="date-cell">06/01 (Mon)</td><td class="content-cell"><strong>전범위 최종 복기 및 행동 강령 점검</strong></td><td class="check-cell"><input type="checkbox" class="save-state" id="day21"></td></tr>
             </tbody>
         </table>
     </div>
@@ -74,35 +129,24 @@
 <button class="print-btn" onclick="window.print()">스케줄 PDF로 저장하기</button>
 
 <script>
-    // 페이지 로드 시 저장된 상태 불러오기
     document.addEventListener('DOMContentLoaded', () => {
         const checkboxes = document.querySelectorAll('.save-state');
         checkboxes.forEach(cb => {
             const savedData = localStorage.getItem(cb.id);
-            if (savedData === 'true') {
-                cb.checked = true;
-            }
-        });
-
-        // 체크박스 변경 시 상태 저장하기
-        checkboxes.forEach(cb => {
+            if (savedData === 'true') cb.checked = true;
             cb.addEventListener('change', (e) => {
                 localStorage.setItem(e.target.id, e.target.checked);
             });
         });
     });
-
-    // 기록 초기화 함수
     function resetProgress() {
         if(confirm("모든 체크 기록을 삭제할까요?")) {
-            const checkboxes = document.querySelectorAll('.save-state');
-            checkboxes.forEach(cb => {
+            document.querySelectorAll('.save-state').forEach(cb => {
                 cb.checked = false;
                 localStorage.removeItem(cb.id);
             });
         }
     }
 </script>
-
 </body>
 </html>
