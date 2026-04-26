@@ -3,61 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ATLAS와 함께하는 평가원 1회독</title>
+    <title>ATLAS 6평 대비 평가원 1회독</title>
     <style>
-        :root { --primary-color: #2563eb; --bg-color: #f8fafc; }
-        body { font-family: 'Pretendard', -apple-system, sans-serif; line-height: 1.6; color: #1e293b; max-width: 900px; margin: 0 auto; padding: 40px 20px; background-color: var(--bg-color); }
-        .container { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
-        h1 { text-align: center; color: #1e293b; font-size: 2rem; margin-bottom: 10px; }
-        .subtitle { text-align: center; color: #64748b; margin-bottom: 40px; }
-        h2 { color: var(--primary-color); border-left: 4px solid var(--primary-color); padding-left: 12px; margin-top: 40px; font-size: 1.4rem; }
-        table { width: 100%; border-collapse: collapse; margin-top: 15px; background: white; }
-        th, td { border: 1px solid #e2e8f0; padding: 14px; text-align: left; }
-        th { background-color: #f1f5f9; font-weight: 600; }
-        tr:hover { background-color: #f8fafc; }
-        input[type="checkbox"] { width: 18px; height: 18px; cursor: pointer; }
-        .highlight { color: #ef4444; font-weight: bold; }
-        .footer { margin-top: 50px; padding: 20px; background: #f1f5f9; border-radius: 12px; font-size: 0.9rem; }
-        @media print { .no-print { display: none; } body { padding: 0; } .container { box-shadow: none; } }
-        .print-btn { background: var(--primary-color); color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; float: right; margin-bottom: 20px; }
+        :root { --primary: #2563eb; --secondary: #3b82f6; --accent: #ef4444; --bg: #f1f5f9; }
+        body { font-family: 'Pretendard', sans-serif; background-color: var(--bg); color: #334155; line-height: 1.5; margin: 0; padding: 20px; }
+        .wrapper { max-width: 850px; margin: 0 auto; background: white; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); padding: 40px; }
+        header { text-align: center; border-bottom: 2px solid #e2e8f0; padding-bottom: 30px; margin-bottom: 30px; }
+        h1 { font-size: 2.2rem; color: #1e293b; margin: 0; letter-spacing: -1px; }
+        .brand { color: var(--primary); font-weight: 800; }
+        
+        .guideline { background: #f8fafc; border-radius: 12px; padding: 20px; margin-bottom: 30px; border-left: 5px solid var(--primary); }
+        .guideline h3 { margin-top: 0; color: var(--primary); font-size: 1.1rem; }
+        .guideline ul { margin: 0; padding-left: 20px; font-size: 0.95rem; }
+        
+        .week-section { margin-bottom: 40px; }
+        .week-title { font-size: 1.3rem; font-weight: 700; color: #1e293b; margin-bottom: 15px; display: flex; align-items: center; }
+        .week-title span { font-size: 0.9rem; color: #64748b; margin-left: 10px; font-weight: 400; }
+
+        table { width: 100%; border-collapse: collapse; margin-bottom: 10px; }
+        th { background: #f1f5f9; text-align: left; padding: 12px; font-size: 0.85rem; text-transform: uppercase; color: #64748b; }
+        td { padding: 15px 12px; border-bottom: 1px solid #f1f5f9; }
+        .day-cell { width: 15%; font-weight: 600; color: var(--primary); }
+        .date-cell { width: 20%; color: #94a3b8; font-size: 0.85rem; }
+        .content-cell { width: 55%; font-weight: 500; }
+        .check-cell { width: 10%; text-align: center; }
+
+        input[type="checkbox"] { width: 20px; height: 20px; cursor: pointer; accent-color: var(--primary); }
+        .phase-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; margin-bottom: 5px; }
+        .p1 { background: #dbeafe; color: #1e40af; }
+        .p2 { background: #fef2f2; color: #991b1b; }
+
+        .print-btn { position: fixed; bottom: 30px; right: 30px; background: var(--primary); color: white; border: none; padding: 15px 25px; border-radius: 50px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(37,99,235,0.3); }
+        @media print { .print-btn { display: none; } .wrapper { box-shadow: none; padding: 0; } }
     </style>
 </head>
 <body>
-    <div class="container">
-        <button class="print-btn no-print" onclick="window.print()">PDF로 저장/출력하기</button>
-        <h1>ATLAS와 함께하는 평가원 1회독</h1>
-        <p class="subtitle">6월 모의고사 전범위 완독 스케줄 (주 4일 집중 플랜)</p>
 
-        <h2>Phase 1: 최신 평가원 기출 21회차 (2021~2026)</h2>
-        <table>
-            <thead>
-                <tr><th>주차</th><th>회차</th><th>학습 내용</th><th style="width:60px">완료</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>1주차</td><td>Day 1-4</td><td>2021 6/9/수능, 2022 6평</td><td><input type="checkbox"></td></tr>
-                <tr><td>2주차</td><td>Day 5-8</td><td>2022 9/수능, 2023 6/9평</td><td><input type="checkbox"></td></tr>
-                <tr><td>3주차</td><td>Day 9-12</td><td>2023 수능, 2024 6/9/수능</td><td><input type="checkbox"></td></tr>
-                <tr><td>4주차</td><td>Day 13-16</td><td>2025 6/9/수능, 2026 예비기출</td><td><input type="checkbox"></td></tr>
-            </tbody>
-        </table>
+<div class="wrapper">
+    <header>
+        <h1><span class="brand">ATLAS</span> 평가원 1회독 가이드</h1>
+        <p style="color: #64748b;">2026학년도 6월 모의평가 대비 집중 트레이닝</p>
+    </header>
 
-        <h2>Phase 2: 과거 기출(2014-2020) 선별 및 약점 보완</h2>
-        <table>
-            <thead>
-                <tr><th>구분</th><th>학습 내용</th><th style="width:60px">완료</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Day 17-20</td><td>2014-2020 교육과정 내 주요 문항 선별 풀이</td><td><input type="checkbox"></td></tr>
-                <tr><td>Day 21-24</td><td><span class="highlight">약점 테마:</span> 킬러 로직 및 실전 행동 강령 정리</td><td><input type="checkbox"></td></tr>
-                <tr><td>D-Day</td><td>전 범위 최종 복기 및 마인드 컨트롤</td><td><input type="checkbox"></td></tr>
-            </tbody>
-        </table>
-
-        <div class="footer">
-            <strong>💡 ATLAS 학습 가이드:</strong><br>
-            - 모든 회차는 실전처럼 30분 타이머를 맞추고 풀이하세요.<br>
-            - 채점 직후 '내가 왜 이 생각을 못 했는지' 행동 강령을 적는 것이 핵심입니다.
-        </div>
+    <div class="guideline">
+        <h3>🚀 Phase 1 행동강령 (실전 감각)</h3>
+        <ul>
+            <li><strong>시간 엄수:</strong> 실제 시험처럼 <strong>30분</strong> 타이머를 맞추고 풀이할 것.</li>
+            <li><strong>피드백:</strong> 채점 및 오답 분석 후, 해결되지 않는 지점은 반드시 <strong>멘토에게 질문</strong>하기!</li>
+        </ul>
+        <h3 style="margin-top:15px; color: var(--accent);">🎯 Phase 2 행동강령 (약점 타격)</h3>
+        <ul>
+            <li><strong>테마 학습:</strong> 취약한 단원의 개념/로직을 복습하고 관련 기출 문항을 집중 풀이하세요.</li>
+        </ul>
     </div>
+
+    <div class="week-section">
+        <div class="week-title">1주차 <span>4월 27일 ~ 5월 3일</span></div>
+        <table>
+            <thead><tr><th>Day</th><th>Date</th><th>Target Content</th><th>Check</th></tr></thead>
+            <tbody>
+                <tr><td class="day-cell">Day 01</td><td class="date-cell">04/27 (Mon)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2021학년도 6월 모의평가</td><td class="check-cell"><input type="checkbox"></td></tr>
+                <tr><td class="day-cell">Day 02</td><td class="date-cell">04/28 (Tue)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2021학년도 9월 모의평가</td><td class="check-cell"><input type="checkbox"></td></tr>
+                <tr><td class="day-cell">Day 03</td><td class="date-cell">04/30 (Thu)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2021학년도 수능</td><td class="check-cell"><input type="checkbox"></td></tr>
+                <tr><td class="day-cell">Day 04</td><td class="date-cell">05/01 (Fri)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2022학년도 6월 모의평가</td><td class="check-cell"><input type="checkbox"></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="week-section">
+        <div class="week-title">2주차 <span>5월 4일 ~ 5월 10일</span></div>
+        <table>
+            <tbody>
+                <tr><td class="day-cell">Day 05</td><td class="date-cell">05/04 (Mon)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2022학년도 9월 모의평가</td><td class="check-cell"><input type="checkbox"></td></tr>
+                <tr><td class="day-cell">Day 06</td><td class="date-cell">05/05 (Tue)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2022학년도 수능</td><td class="check-cell"><input type="checkbox"></td></tr>
+                <tr><td class="day-cell">Day 07</td><td class="date-cell">05/07 (Thu)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2023학년도 6월 모의평가</td><td class="check-cell"><input type="checkbox"></td></tr>
+                <tr><td class="day-cell">Day 08</td><td class="date-cell">05/08 (Fri)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2023학년도 9월 모의평가</td><td class="check-cell"><input type="checkbox"></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="week-section">
+        <div class="week-title">3주차 <span>5월 11일 ~ 5월 17일</span></div>
+        <table>
+            <tbody>
+                <tr><td class="day-cell">Day 09</td><td class="date-cell">05/11 (Mon)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2023학년도 수능</td><td class="check-cell"><input type="checkbox"></td></tr>
+                <tr><td class="day-cell">Day 10</td><td class="date-cell">05/12 (Tue)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2024학년도 6월 모의평가</td><td class="check-cell"><input type="checkbox"></td></tr>
+                <tr><td class="day-cell">Day 11</td><td class="date-cell">05/14 (Thu)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2024학년도 9월 모의평가</td><td class="check-cell"><input type="checkbox"></td></tr>
+                <tr><td class="day-cell">Day 12</td><td class="date-cell">05/15 (Fri)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2024학년도 수능</td><td class="check-cell"><input type="checkbox"></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="week-section">
+        <div class="week-title">4주차 <span>5월 18일 ~ 5월 24일</span></div>
+        <table>
+            <tbody>
+                <tr><td class="day-cell">Day 13</td><td class="date-cell">05/18 (Mon)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2025학년도 6월 모의평가</td><td class="check-cell"><input type="checkbox"></td></tr>
+                <tr><td class="day-cell">Day 14</td><td class="date-cell">05/19 (Tue)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2025학년도 9월 모의평가</td><td class="check-cell"><input type="checkbox"></td></tr>
+                <tr><td class="day-cell">Day 15</td><td class="date-cell">05/21 (Thu)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2025학년도 수능</td><td class="check-cell"><input type="checkbox"></td></tr>
+                <tr><td class="day-cell">Day 16</td><td class="date-cell">05/22 (Fri)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2026학년도 예비 및 평가원 기출 (A)</td><td class="check-cell"><input type="checkbox"></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="week-section">
+        <div class="week-title">5주차 <span>5월 25일 ~ 5월 31일</span></div>
+        <table>
+            <tbody>
+                <tr><td class="day-cell">Day 17</td><td class="date-cell">05/25 (Mon)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2026학년도 예비 및 평가원 기출 (B)</td><td class="check-cell"><input type="checkbox"></td></tr>
+                <tr><td class="day-cell">Day 18</td><td class="date-cell">05/26 (Tue)</td><td class="content-cell"><span class="phase-badge p2">Phase 2</span> 2014~2020 교육과정 부합 문항 선별 풀이</td><td class="check-cell"><input type="checkbox"></td></tr>
+                <tr><td class="day-cell">Day 19</td><td class="date-cell">05/28 (Thu)</td><td class="content-cell"><span class="phase-badge p2">Phase 2</span> 약점 테마 01 집중 학습 + 관련 기출</td><td class="check-cell"><input type="checkbox"></td></tr>
+                <tr><td class="day-cell">Day 20</td><td class="date-cell">05/29 (Fri)</td><td class="content-cell"><span class="phase-badge p2">Phase 2</span> 약점 테마 02 집중 학습 + 관련 기출</td><td class="check-cell"><input type="checkbox"></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="week-section">
+        <div class="week-title" style="color: var(--accent);">Final Day <span>6월 1일</span></div>
+        <table>
+            <tbody>
+                <tr style="background: #fff1f2;"><td class="day-cell">D-1</td><td class="date-cell">06/01 (Mon)</td><td class="content-cell"><strong>전범위 핵심 논리 복기 및 행동 강령 최종 점검</strong></td><td class="check-cell"><input type="checkbox"></td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<button class="print-btn" onclick="window.print()">스케줄 PDF로 저장하기</button>
+
 </body>
 </html>
