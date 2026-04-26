@@ -28,13 +28,15 @@
         .content-cell { width: 55%; font-weight: 500; }
         .check-cell { width: 10%; text-align: center; }
 
-        input[type="checkbox"] { width: 20px; height: 20px; cursor: pointer; accent-color: var(--primary); }
+        input[type="checkbox"] { width: 22px; height: 22px; cursor: pointer; accent-color: var(--primary); }
         .phase-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; margin-bottom: 5px; }
         .p1 { background: #dbeafe; color: #1e40af; }
         .p2 { background: #fef2f2; color: #991b1b; }
 
-        .print-btn { position: fixed; bottom: 30px; right: 30px; background: var(--primary); color: white; border: none; padding: 15px 25px; border-radius: 50px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(37,99,235,0.3); }
+        .print-btn { position: fixed; bottom: 30px; right: 30px; background: var(--primary); color: white; border: none; padding: 15px 25px; border-radius: 50px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(37,99,235,0.3); z-index: 100; }
         @media print { .print-btn { display: none; } .wrapper { box-shadow: none; padding: 0; } }
+        
+        .reset-btn { font-size: 0.8rem; color: #94a3b8; background: none; border: none; text-decoration: underline; cursor: pointer; float: right; margin-top: 10px; }
     </style>
 </head>
 <body>
@@ -51,10 +53,6 @@
             <li><strong>시간 엄수:</strong> 실제 시험처럼 <strong>30분</strong> 타이머를 맞추고 풀이할 것.</li>
             <li><strong>피드백:</strong> 채점 및 오답 분석 후, 해결되지 않는 지점은 반드시 <strong>멘토에게 질문</strong>하기!</li>
         </ul>
-        <h3 style="margin-top:15px; color: var(--accent);">🎯 Phase 2 행동강령 (약점 타격)</h3>
-        <ul>
-            <li><strong>테마 학습:</strong> 취약한 단원의 개념/로직을 복습하고 관련 기출 문항을 집중 풀이하세요.</li>
-        </ul>
     </div>
 
     <div class="week-section">
@@ -62,73 +60,49 @@
         <table>
             <thead><tr><th>Day</th><th>Date</th><th>Target Content</th><th>Check</th></tr></thead>
             <tbody>
-                <tr><td class="day-cell">Day 01</td><td class="date-cell">04/27 (Mon)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2021학년도 6월 모의평가</td><td class="check-cell"><input type="checkbox"></td></tr>
-                <tr><td class="day-cell">Day 02</td><td class="date-cell">04/28 (Tue)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2021학년도 9월 모의평가</td><td class="check-cell"><input type="checkbox"></td></tr>
-                <tr><td class="day-cell">Day 03</td><td class="date-cell">04/30 (Thu)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2021학년도 수능</td><td class="check-cell"><input type="checkbox"></td></tr>
-                <tr><td class="day-cell">Day 04</td><td class="date-cell">05/01 (Fri)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2022학년도 6월 모의평가</td><td class="check-cell"><input type="checkbox"></td></tr>
+                <tr><td class="day-cell">Day 01</td><td class="date-cell">04/27</td><td class="content-cell">21학년도 6월 모의평가</td><td class="check-cell"><input type="checkbox" class="save-state" id="day01"></td></tr>
+                <tr><td class="day-cell">Day 02</td><td class="date-cell">04/28</td><td class="content-cell">21학년도 9월 모의평가</td><td class="check-cell"><input type="checkbox" class="save-state" id="day02"></td></tr>
+                <tr><td class="day-cell">Day 03</td><td class="date-cell">04/30</td><td class="content-cell">21학년도 수능</td><td class="check-cell"><input type="checkbox" class="save-state" id="day03"></td></tr>
+                <tr><td class="day-cell">Day 04</td><td class="date-cell">05/01</td><td class="content-cell">22학년도 6월 모의평가</td><td class="check-cell"><input type="checkbox" class="save-state" id="day04"></td></tr>
             </tbody>
         </table>
     </div>
 
-    <div class="week-section">
-        <div class="week-title">2주차 <span>5월 4일 ~ 5월 10일</span></div>
-        <table>
-            <tbody>
-                <tr><td class="day-cell">Day 05</td><td class="date-cell">05/04 (Mon)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2022학년도 9월 모의평가</td><td class="check-cell"><input type="checkbox"></td></tr>
-                <tr><td class="day-cell">Day 06</td><td class="date-cell">05/05 (Tue)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2022학년도 수능</td><td class="check-cell"><input type="checkbox"></td></tr>
-                <tr><td class="day-cell">Day 07</td><td class="date-cell">05/07 (Thu)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2023학년도 6월 모의평가</td><td class="check-cell"><input type="checkbox"></td></tr>
-                <tr><td class="day-cell">Day 08</td><td class="date-cell">05/08 (Fri)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2023학년도 9월 모의평가</td><td class="check-cell"><input type="checkbox"></td></tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="week-section">
-        <div class="week-title">3주차 <span>5월 11일 ~ 5월 17일</span></div>
-        <table>
-            <tbody>
-                <tr><td class="day-cell">Day 09</td><td class="date-cell">05/11 (Mon)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2023학년도 수능</td><td class="check-cell"><input type="checkbox"></td></tr>
-                <tr><td class="day-cell">Day 10</td><td class="date-cell">05/12 (Tue)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2024학년도 6월 모의평가</td><td class="check-cell"><input type="checkbox"></td></tr>
-                <tr><td class="day-cell">Day 11</td><td class="date-cell">05/14 (Thu)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2024학년도 9월 모의평가</td><td class="check-cell"><input type="checkbox"></td></tr>
-                <tr><td class="day-cell">Day 12</td><td class="date-cell">05/15 (Fri)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2024학년도 수능</td><td class="check-cell"><input type="checkbox"></td></tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="week-section">
-        <div class="week-title">4주차 <span>5월 18일 ~ 5월 24일</span></div>
-        <table>
-            <tbody>
-                <tr><td class="day-cell">Day 13</td><td class="date-cell">05/18 (Mon)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2025학년도 6월 모의평가</td><td class="check-cell"><input type="checkbox"></td></tr>
-                <tr><td class="day-cell">Day 14</td><td class="date-cell">05/19 (Tue)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2025학년도 9월 모의평가</td><td class="check-cell"><input type="checkbox"></td></tr>
-                <tr><td class="day-cell">Day 15</td><td class="date-cell">05/21 (Thu)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2025학년도 수능</td><td class="check-cell"><input type="checkbox"></td></tr>
-                <tr><td class="day-cell">Day 16</td><td class="date-cell">05/22 (Fri)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2026학년도 예비 및 평가원 기출 (A)</td><td class="check-cell"><input type="checkbox"></td></tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="week-section">
-        <div class="week-title">5주차 <span>5월 25일 ~ 5월 31일</span></div>
-        <table>
-            <tbody>
-                <tr><td class="day-cell">Day 17</td><td class="date-cell">05/25 (Mon)</td><td class="content-cell"><span class="phase-badge p1">Phase 1</span> 2026학년도 예비 및 평가원 기출 (B)</td><td class="check-cell"><input type="checkbox"></td></tr>
-                <tr><td class="day-cell">Day 18</td><td class="date-cell">05/26 (Tue)</td><td class="content-cell"><span class="phase-badge p2">Phase 2</span> 2014~2020 교육과정 부합 문항 선별 풀이</td><td class="check-cell"><input type="checkbox"></td></tr>
-                <tr><td class="day-cell">Day 19</td><td class="date-cell">05/28 (Thu)</td><td class="content-cell"><span class="phase-badge p2">Phase 2</span> 약점 테마 01 집중 학습 + 관련 기출</td><td class="check-cell"><input type="checkbox"></td></tr>
-                <tr><td class="day-cell">Day 20</td><td class="date-cell">05/29 (Fri)</td><td class="content-cell"><span class="phase-badge p2">Phase 2</span> 약점 테마 02 집중 학습 + 관련 기출</td><td class="check-cell"><input type="checkbox"></td></tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="week-section">
-        <div class="week-title" style="color: var(--accent);">Final Day <span>6월 1일</span></div>
-        <table>
-            <tbody>
-                <tr style="background: #fff1f2;"><td class="day-cell">D-1</td><td class="date-cell">06/01 (Mon)</td><td class="content-cell"><strong>전범위 핵심 논리 복기 및 행동 강령 최종 점검</strong></td><td class="check-cell"><input type="checkbox"></td></tr>
-            </tbody>
-        </table>
-    </div>
+    <button class="reset-btn" onclick="resetProgress()">기록 초기화</button>
 </div>
 
 <button class="print-btn" onclick="window.print()">스케줄 PDF로 저장하기</button>
+
+<script>
+    // 페이지 로드 시 저장된 상태 불러오기
+    document.addEventListener('DOMContentLoaded', () => {
+        const checkboxes = document.querySelectorAll('.save-state');
+        checkboxes.forEach(cb => {
+            const savedData = localStorage.getItem(cb.id);
+            if (savedData === 'true') {
+                cb.checked = true;
+            }
+        });
+
+        // 체크박스 변경 시 상태 저장하기
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', (e) => {
+                localStorage.setItem(e.target.id, e.target.checked);
+            });
+        });
+    });
+
+    // 기록 초기화 함수
+    function resetProgress() {
+        if(confirm("모든 체크 기록을 삭제할까요?")) {
+            const checkboxes = document.querySelectorAll('.save-state');
+            checkboxes.forEach(cb => {
+                cb.checked = false;
+                localStorage.removeItem(cb.id);
+            });
+        }
+    }
+</script>
 
 </body>
 </html>
